@@ -1,0 +1,4 @@
+puppet-couchpotatoserver
+========================
+
+Install couchpotatoserver
