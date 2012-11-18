@@ -3,7 +3,6 @@ class couchpotatoserver::config {
         logrotate::rule { 'couchpotato':
             path          => "$log_dir/*",
             rotate        => 5,
-            mail          => 'system@joemcwilliams.com',
             size          => '100k',
             sharedscripts => true,
             postrotate    => '/usr/bin/supervisorctl restart couchpotato',

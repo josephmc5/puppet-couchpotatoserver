@@ -22,6 +22,7 @@ class couchpotatoserver::params (
     $url = hiera("couchpotato_git_url", "git://github.com/RuudBurger/CouchPotatoServer.git"),
     $proxy_nginx = hiera("proxy_nginx", "false"),
     $proxy_apache = hiera("proxy_apache", "false"),
+    $logrotate = hiera("logrotate", "false"),
 )
 {
     $log_dir = "$base_dir/couchpotato/log"
