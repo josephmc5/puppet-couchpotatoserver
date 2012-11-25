@@ -25,6 +25,7 @@ class couchpotatoserver::params (
     $logrotate = hiera("logrotate", "false"),
 )
 {
+    $services_user = hiera("services_user")
     $log_dir = "$base_dir/couchpotato/log"
     $data_dir = "$base_dir/couchpotato/data"
     $cache_dir = "$base_dir/couchpotato/cache"

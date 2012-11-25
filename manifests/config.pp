@@ -10,19 +10,19 @@ class couchpotatoserver::config {
     } 
     file { "$log_dir":
         ensure => directory,
-        owner => 'couchpotato',
-        group => 'couchpotato',
+        owner => "$services_user",
+        group => "$services_user",
         mode => '0644',
     }
     file { "$base_dir/couchpotato/config/":
         ensure => directory,
-        owner => 'couchpotato',
-        group => 'couchpotato',
+        owner => "$services_user",
+        group => "$services_user",
     }
     file { "$base_dir/couchpotato/settings.conf":
         content => template('couchpotatoserver/settings.conf.erb'),
-        owner => 'couchpotato',
-        group => 'couchpotato',
+        owner => "$services_user",
+        group => "$services_user",
         mode => '0644',
         require => File["$base_dir/couchpotato/config/"],
         notify => Service['supervisor::couchpotato'],
